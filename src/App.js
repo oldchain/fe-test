@@ -1,21 +1,34 @@
-import logo from './logo.svg';
 import React, { useState, useEffect }from 'react';
 import Header from './components/header'
 import './App.css';
 import './default.scss';
 import Item from './components/item';
+import Filter from './components/filter';
+import  axios from "axios";
 
 function App() {
 
-  useEffect(() => console.log('mounted or updated'));
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    axios.get('/data/whiskies.json')
+    .then(res =>{
+      setItems(res.data);
+    })
+    .catch(err => console.log(err));
+  }, []);
 
   return (
     <div className="App">
       <Header />
+      <Filter regions={items.map(item => item.region)}/>
       <div className="row">
-      <Item />
-      <Item />
-      <Item />
+        {
+          items.map((item,i) => <Item key={i}
+           details={
+             item 
+            }
+           />)
+        }
       </div>
 
     </div>

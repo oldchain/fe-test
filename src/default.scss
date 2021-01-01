@@ -12,3 +12,17 @@ body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+.App{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-family: 'Cabin', sans-serif;
+  }
+  .row{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
