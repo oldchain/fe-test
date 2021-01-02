@@ -1,9 +1,49 @@
 .footer-img{
     margin-top: 150px;
     display: flex;
+    position: relative;
+    border-radius: 5px;
+
     img{
-        width: 96%;
+        width: 100%;    
         margin: 0 auto;
         height: auto;
+        border-radius: 5px;
     }
+    
+    .text-block {
+        position: absolute;
+        bottom: 50px;
+        left: 100px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        h1{
+            font-family: 'Cabin', sans-serif;
+            line-height: 1;
+            letter-spacing: -2px;
+            font-size: 70px;
+            width: 60%;
+        }
+        p{
+            font-family: 'Cabin', sans-serif;
+            line-height: 1.5;
+            font-size: 20px;
+            width: 55%;
+        }
+      }
+}
+.footer-img:before{    
+    background: rgba(37, 35, 35, 0.7);   
+    position: absolute;    
+    height: 100%;    
+    left: 0;   
+    top: 0;    
+    margin: 0;    
+    width: 100%;    
+    content: ' ';   
+    display: block;
+    border-radius: 5px;
+
 }
