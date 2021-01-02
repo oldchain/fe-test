@@ -1,16 +1,22 @@
 .link{
     padding-top: 20px;
     margin: 0 auto;
-    a{
+    button{
         padding: 11px 15px 11px 15px;
         border: 1px solid gray;
         border-radius: 20px;
         margin: 10px;
         font-size: 15px;
         font-weight: 100;
-
+        background-color: white;
+        font-family: 'Cabin', sans-serif;
     }
-    a:hover{
+    button:hover{
         cursor: pointer;
     }
+    button:focus{
+        background-color: lightgrey;
+        outline: -webkit-focus-ring-color auto 0px;
+    }
+    
 }
