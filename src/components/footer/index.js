@@ -4,7 +4,7 @@ import './styles.scss';
 const Footer = props =>{  
     
     return(
-      <a href={props.article.url} target="_blank" className="footer-img">
+      <div href={props.article.url} target="_blank" className="footer-img">
             <img src={require('./../../assets/' + props.article.img).default} alt={props.article.title}></img>
             <div className="text-block">
                 <h1><i>{props.article.title.toUpperCase()}</i></h1>
@@ -12,7 +12,7 @@ const Footer = props =>{
                 </p>
             </div>
 
-      </a>
+      </div>
     );
 };
 

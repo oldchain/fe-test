@@ -38,7 +38,7 @@ const Item = props =>{
                                 {/* here we have an inline style for BackgroundImage with the linear-gradient to compine the 2 colors together */}
                                 <div className="winery-components" style={{backgroundImage: "linear-gradient(to right bottom, " + colors[item.region][0] + ", " + colors[item.region][1] + ")"}}>
                                     {
-                                        item.tasting_notes.map((item,i) => <a key={i}>{capitalizeFirstLetter(item)}</a>)
+                                        item.tasting_notes.map((item,i) => <p key={i}>{capitalizeFirstLetter(item)}</p>)
                                     }
                                 </div>
                             </div>

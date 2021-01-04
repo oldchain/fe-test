@@ -2,11 +2,7 @@ import React, { useState, useEffect }from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect,
-  Link,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
 
 import Header from './components/header'
