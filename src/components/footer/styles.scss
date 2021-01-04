@@ -24,13 +24,13 @@
             line-height: 1;
             letter-spacing: -2px;
             font-size: 70px;
-            width: 60%;
+            width: 50%;
         }
         p{
             font-family: 'Cabin', sans-serif;
             line-height: 1.5;
             font-size: 20px;
-            width: 55%;
+            width: 52%;
         }
       }
 }
@@ -46,4 +46,22 @@
     display: block;
     border-radius: 5px;
 
+}
+
+@media only screen and (max-width: 992px) {
+    .footer-img{    
+        height: 500px;
+
+        .text-block{
+            padding-left: 0px;   
+            h1{
+                width: 90%;
+                font-size: 40px;
+            }
+            p{
+                width: 90%;
+                font-size: 20px;
+            }
+        }
+    }
 }
