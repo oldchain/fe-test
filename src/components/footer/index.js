@@ -7,7 +7,7 @@ const Footer = props =>{
       <a href={props.article.url} target="_blank" className="footer-img">
             <img src={require('./../../assets/' + props.article.img).default} alt={props.article.title}></img>
             <div className="text-block">
-                <h1><i>{props.article.title}</i></h1>
+                <h1><i>{props.article.title.toUpperCase()}</i></h1>
                 <p>{props.article.teaser}
                 </p>
             </div>

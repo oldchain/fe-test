@@ -4,22 +4,24 @@ import "./styles.scss";
 
 const Filter = props =>{  
 
-    let unique = [...new Set(props.regions)];
-    const [filtered, setFiltered] = useState("all");
+    let unique = [...new Set(props.regions)]; // this is an array that has all distinct region values
+
+    const [filtered, setFiltered] = useState("all"); //controling the filtered state
 
     useEffect(() => {
-        props.onFilter(filtered);
+        props.onFilter(filtered); //invoking the getData function we got from App Componenet as an onFilter Prop whenever we chose a category/region
         console.log(filtered)
     }, [filtered]);
 
-    const handleEvent = (e) => {
+    const handleEvent = (e) => { //this function for assigning the filtered value to the chosen category
         setFiltered(e.target.value);
     }
 
-    function capitalizeFirstLetter(string) {
+    function capitalizeFirstLetter(string) { //capitalizing the first letter 
         return string.charAt(0).toUpperCase() + string.slice(1);
     }     
-    unique.sort();
+    
+    unique.sort(); //sorting the regions 
 
     return(
       <div className="link">
