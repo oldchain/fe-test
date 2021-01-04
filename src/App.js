@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   Link,
   useRouteMatch,
   useParams
@@ -47,23 +48,25 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
-        <Route path="/items">
-        <Filter regions={items.map(item => item.region)} onFilter={getData}/>
-        <div className="row">
-          {
-            filtered !== "all" ? items.map((item,i) => item.region === filtered ? <Item key={i} details={item}/>  : "") :  items.map((item,i) => <Item key={i} details={item}/> )
-          }
-        </div>
-        <div className="row">
-          {
-            articles.map((item,i) => <Footer key={i} article={item}/>)
-          }
-        </div>
-        </Route>
-          <Route path="/purchase">
-            <Purchase />
+        <Router>
+        <Switch>
+          <Route exact path="/">
+            <Filter regions={items.map(item => item.region)} onFilter={getData}/>
+            <div className="row">
+              {
+                filtered !== "all" ? items.map((item,i) => item.region === filtered ? <Item key={i} details={item}/>  : "") :  items.map((item,i) => <Item key={i} details={item}/> )
+              }
+            </div>
+            <div className="row">
+              {
+                articles.map((item,i) => <Footer key={i} article={item}/>)
+              }
+            </div>
           </Route>
+          <Route path="/:itemUri">
+            <Purchase items={items} />
+          </Route>
+          </Switch>
         </Router>
     </div>
     

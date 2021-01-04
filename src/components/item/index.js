@@ -20,13 +20,13 @@ const colors = {
 }
 
 const Item = props =>{
-
+      
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }      
     const renderProduct = (item) => {
         return(
-                    <Link to={`/purchase${item.uri}`} className="card">
+                    <Link to={`${item.uri}`} className="card">
                         <div className="content">
                             <div className="description">
                                 <h2>{capitalizeFirstLetter(item.title)}</h2>

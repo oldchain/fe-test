@@ -1,9 +1,8 @@
 import React from "react";
 import './styles.scss';
-import glassImage from "./../../assets/whiskey-glass.jpg";
 
 const Footer = props =>{  
-
+    
     return(
       <a href={props.article.url} target="_blank" className="footer-img">
             <img src={require('./../../assets/' + props.article.img).default} alt={props.article.title}></img>
