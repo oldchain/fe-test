@@ -10,11 +10,21 @@ import Footer from "./components/footer";
 function App() {
 
   const [items, setItems] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [filtered, setFiltered] = useState("all");
   useEffect(() => {
+    //getting the Whiskies data
     axios.get('/data/whiskies.json')
     .then(res =>{
       setItems(res.data);
+      console.log(res.data);
+    })
+    .catch(err => console.log(err));
+
+    //getting the Articles data
+    axios.get('/data/articles.json')
+    .then(res =>{
+      setArticles(res.data);
       console.log(res.data);
     })
     .catch(err => console.log(err));
@@ -33,7 +43,12 @@ function App() {
           filtered !== "all" ? items.map((item,i) => item.region === filtered ? <Item key={i} details={item}/>  : "") :  items.map((item,i) => <Item key={i} details={item}/> )
         }
       </div>
-      <Footer />
+      <div className="row">
+        {
+          articles.map((item,i) => <Footer key={i} article={item}/>)
+        }
+      </div>
+      
     </div>
   );
 }

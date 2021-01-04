@@ -1,7 +1,5 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import "./styles.scss";
-import ReactLogo from './../../assets/card-bg.svg';
-import axios from 'axios'
 
 const colors = {
     "islay": ["#A5238E", "#6E2671"],
@@ -19,7 +17,7 @@ const Item = props =>{
     }      
     const renderProduct = (item) => {
         return(
-                    <div className="card">
+                    <a className="card">
                         <div className="content">
                             <div className="description">
                                 <h2>{capitalizeFirstLetter(item.title)}</h2>
@@ -32,10 +30,10 @@ const Item = props =>{
                                 </div>
                             </div>
                             <div className="item-img">
-                                <img src={require('./../../assets/' + item.image).default}></img>
+                                <img src={require('./../../assets/' + item.image).default} alt={item.title}></img>
                             </div>
                         </div>
-                    </div>
+                    </a>
         );
     }
 
