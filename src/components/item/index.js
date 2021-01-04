@@ -1,5 +1,14 @@
 import React from 'react';
 import "./styles.scss";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+  } from "react-router-dom";
+  
 
 const colors = {
     "islay": ["#A5238E", "#6E2671"],
@@ -11,13 +20,13 @@ const colors = {
 }
 
 const Item = props =>{
-    
+
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }      
     const renderProduct = (item) => {
         return(
-                    <a className="card">
+                    <Link to={`/purchase${item.uri}`} className="card">
                         <div className="content">
                             <div className="description">
                                 <h2>{capitalizeFirstLetter(item.title)}</h2>
@@ -33,10 +42,9 @@ const Item = props =>{
                                 <img src={require('./../../assets/' + item.image).default} alt={item.title}></img>
                             </div>
                         </div>
-                    </a>
+                    </Link>
         );
     }
-
     return(
         renderProduct(props.details)
     );
